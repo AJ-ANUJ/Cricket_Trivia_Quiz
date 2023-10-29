@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 const Quiz = () => {
     const location = useLocation();
     const qArray = location.state?.qa;
-    console.log(qArray);
+    // console.log(qArray);
     const [states, setStates] = useState({
         qNo:0,
         correctAns:0,
@@ -23,20 +23,7 @@ const Quiz = () => {
     console.log(qArray);
     
     const onClickHandle = (option) => {
-        // if(option === correctOption) {
-        //     setStates((prevState) => ({
-        //         ...prevState,
-        //         qNo: prevState.qNo + 1,
-        //         correctAns: prevState.correctAns + 1
-        //     }));
-        // }
-        // else {
-        //     setStates((prevState) => ({
-        //         ...prevState,
-        //         qNo: prevState.qNo + 1,
-        //         correctAns: prevState.correctAns + 1,
-        //     }));
-        // }
+        
         if(states.qNo < 9) {
             if(option === correctOption) {
                 setStates((prevState) => ({

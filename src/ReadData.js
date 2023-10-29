@@ -6,12 +6,13 @@ const ReadData = ({children}) => {
     
     var questions = {};
     async function tryFetch() {
-        const response = await fetch('/data/questions.txt');
+        const response = await fetch(process.env.PUBLIC_URL + '/data/questions.txt');
         var data = await response.text();
         data = data.split('\n');
         for(let i=0; i<data.length; i+=2) {
             questions[data[i]] = data[i+1]
         }
+        console.log(questions);
     }
 
     useEffect(() => {
