@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import generateNum from './GenerateRandomNum';
-import { useNavigate } from 'react-router-dom';
+import './Quiz.css';
 
 const Quiz = () => {
     const location = useLocation();
@@ -63,20 +63,38 @@ const Quiz = () => {
     }
 
     return (
-        <div>
+        <div style={{'height':'100%'}}>
             {/* <p>Hello</p> */}
             { !states.quizComplete ? (
-                <div>
-                <p>Question {states.qNo+1}</p>
-                <p>{q}</p>
-                <button onClick={() => onClickHandle(o1)}>{o1}</button>
-                <button onClick={() => onClickHandle(o2)}>{o2}</button>
-                <button onClick={() => onClickHandle(o3)}>{o3}</button>
-                <button onClick={() => onClickHandle(o4)}>{o4}</button>
+                <div className='quiz-div'>
+                <div className='c2-qNo-div'>
+                    <p className='question-no'>Question {states.qNo+1}</p>
+                </div>
+                <div className='c2-q-div'>
+                    <p className='question'>{q}</p>
+                </div>
+                <div className='c2-button-div'>
+                    <button className='option' onClick={() => onClickHandle(o1)}>{o1}</button>
+                    <button className='option' onClick={() => onClickHandle(o2)}>{o2}</button>
+                    <button className='option' onClick={() => onClickHandle(o3)}>{o3}</button>
+                    <button className='option' onClick={() => onClickHandle(o4)}>{o4}</button>
+                    {/* <div className='c2-button-cell'>
+                    <button className='option' onClick={() => onClickHandle(o1)}>{o1}</button>
+                    </div>
+                    <div className='c2-button-cell'>
+                    <button className='option' onClick={() => onClickHandle(o2)}>{o2}</button>
+                    </div>
+                    <div className='c2-button-cell'>
+                    <button className='option' onClick={() => onClickHandle(o3)}>{o3}</button>
+                    </div>
+                    <div className='c2-button-cell'>
+                    <button className='option' onClick={() => onClickHandle(o4)}>{o4}</button>
+                    </div> */}
+                </div>
                 </div>
             ) : (
-                <div>
-                <p>You got {states.correctAns} out of 10!</p>
+                <div className='c2-message-div'>
+                <p className='c2-message'>You got {states.correctAns} out of 10!</p>
                 {/* <button>Play Again ?</button> */}
                 </div>
             )}

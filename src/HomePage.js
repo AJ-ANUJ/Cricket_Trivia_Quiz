@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { dataContext } from './ReadData';
 import selectQuestions from './SelectQuestions';
+import './HomePage.css';
 
 const HomePage = () => {
     const navigate = useNavigate();
@@ -13,10 +14,14 @@ const HomePage = () => {
     };
 
     return (
-    <div>
-        <p>Cricket Trivia</p>
-        <p>Play this fun quiz to test your cricket knowledge !</p>
-        <button onClick={handleClick}>Start Quiz</button>
+    <div className='home-page'>
+        <p className='p'>Cricket Trivia</p>
+        <div className='message-div'>
+        <p className='message'>Play this fun quiz to test your cricket knowledge !</p>
+        </div>
+        <div className='button-div'>
+        <button onClick={handleClick} className='button'>Start Quiz</button>
+        </div>
     </div>
   );
 }
