@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Cricket_Trivia_Quiz/static/css/main.073c9b0a.css",
+    "main.js": "/Cricket_Trivia_Quiz/static/js/main.37c59afe.js",
+    "static/js/787.02620e17.chunk.js": "/Cricket_Trivia_Quiz/static/js/787.02620e17.chunk.js",
+    "index.html": "/Cricket_Trivia_Quiz/index.html",
+    "main.073c9b0a.css.map": "/Cricket_Trivia_Quiz/static/css/main.073c9b0a.css.map",
+    "main.37c59afe.js.map": "/Cricket_Trivia_Quiz/static/js/main.37c59afe.js.map",
+    "787.02620e17.chunk.js.map": "/Cricket_Trivia_Quiz/static/js/787.02620e17.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.37c59afe.js"
+  ]
+}
