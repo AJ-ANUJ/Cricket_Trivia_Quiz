@@ -9,8 +9,8 @@ const HomePage = () => {
     const questions = useContext(dataContext);
     const handleClick = () => {
         const qa = selectQuestions(questions); 
-        console.log(qa);
-        navigate('/play_quiz', { state : { qa }});
+        // console.log(qa);
+        navigate('/play_quiz', { state : { qa, questions }});
     };
 
     return (

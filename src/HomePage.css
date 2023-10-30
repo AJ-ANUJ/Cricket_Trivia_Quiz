@@ -21,6 +21,7 @@
     font-size: 30px;
     color: white;
     font-family: 'Comic Sans MS', 'Comic Sans', 'cursive';
+    font-weight: bold;
 }
 
 .button {
@@ -31,6 +32,7 @@
     font-family: 'Comic Sans MS', 'Comic Sans', 'cursive';
     cursor: pointer;
     margin-left: 10%;
+    font-weight: bold;
 }
 
 .button-div {

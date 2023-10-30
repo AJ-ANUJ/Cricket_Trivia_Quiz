@@ -12,7 +12,7 @@ const ReadData = ({children}) => {
         for(let i=0; i<data.length; i+=2) {
             questions[data[i]] = data[i+1]
         }
-        console.log(questions);
+        // console.log(questions);
     }
 
     useEffect(() => {
