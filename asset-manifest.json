@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Cricket_Trivia_Quiz/static/css/main.cb11d914.css",
-    "main.js": "/Cricket_Trivia_Quiz/static/js/main.ed373360.js",
+    "main.css": "/Cricket_Trivia_Quiz/static/css/main.1e25da89.css",
+    "main.js": "/Cricket_Trivia_Quiz/static/js/main.c1f03371.js",
     "static/js/787.02620e17.chunk.js": "/Cricket_Trivia_Quiz/static/js/787.02620e17.chunk.js",
     "static/media/c1.jpeg": "/Cricket_Trivia_Quiz/static/media/c1.8e8fcd5f5a68ad1300b8.jpeg",
     "static/media/stadium.webp": "/Cricket_Trivia_Quiz/static/media/stadium.ce279c1c78924a1ef8af.webp",
     "index.html": "/Cricket_Trivia_Quiz/index.html",
-    "main.cb11d914.css.map": "/Cricket_Trivia_Quiz/static/css/main.cb11d914.css.map",
-    "main.ed373360.js.map": "/Cricket_Trivia_Quiz/static/js/main.ed373360.js.map",
+    "main.1e25da89.css.map": "/Cricket_Trivia_Quiz/static/css/main.1e25da89.css.map",
+    "main.c1f03371.js.map": "/Cricket_Trivia_Quiz/static/js/main.c1f03371.js.map",
     "787.02620e17.chunk.js.map": "/Cricket_Trivia_Quiz/static/js/787.02620e17.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cb11d914.css",
-    "static/js/main.ed373360.js"
+    "static/css/main.1e25da89.css",
+    "static/js/main.c1f03371.js"
   ]
 }

@@ -46,7 +46,7 @@ Which Indian team has won the most IPL titles?
 Mumbai Indians, Chennai Super Kings, Kolkata Knight Riders, Royal Challengers Bangalore
 Which Indian team has won the most Ranji Trophy titles?
 Mumbai, Karnataka, Tamil Nadu, Delhi
-Who is the only Indian batsman to score a triple century in Test cricket?
+Who among these have scored a triple century in Test cricket?
 Virender Sehwag, Sachin Tendulkar, Rohit Sharma, Virat Kohli
 Who is the only Indian bowler to take 10 wickets in a Test match?
 Anil Kumble, Ravichandran Ashwin, Kapil Dev, Mohammed Shami
@@ -115,7 +115,7 @@ Anil Kumble, Jim Laker, Muttiah Muralitharan, Stuart Broad
 In which city is the M. Chinnaswamy Stadium, one of India's major cricket venues, located?
 Bengaluru, Mumbai, Chennai, Delhi
 Who holds the record for the fastest double century in One Day International (ODI) cricket?
-Rohit Sharma, AB de Villiers, Chris Gayle, Martin Guptill
+Ishan Kishan, Rohit Sharma, AB de Villiers, Martin Guptill
 In which year did the first-ever Cricket World Cup take place?
 1975, 1983, 1987, 1992
 Who is known as the "Super King" in Indian Premier League (IPL) cricket?
@@ -139,7 +139,7 @@ Muttiah Muralitharan, Shane Warne, Anil Kumble, Glenn McGrath
 In which city is the Wankhede Stadium, one of India's prominent cricket venues, located?
 Mumbai, Kolkata, Chennai, Delhi
 Who holds the record for the most sixes in international cricket?
-Shahid Afridi, Chris Gayle, Brendon McCullum, Yuvraj Singh
+Rohit Sharma, Chris Gayle, Brendon McCullum, Yuvraj Singh
 Who is known as the "Black Bradman" for his extraordinary batting skills?
 Sir Vivian Richards, Brian Lara, Don Bradman, Sachin Tendulkar
 Which cricketer is known as the "Turbanator" for his spin bowling?
