@@ -22,6 +22,8 @@ const Quiz = () => {
         o3: location.state?.qa[0][1][randomIndices[2]],
         o4: location.state?.qa[0][1][randomIndices[3]],
         newGame: false,
+        isAttempted: false,
+        firstMessage: true,
     });
 
     if(states.newGame === true) {
@@ -37,20 +39,30 @@ const Quiz = () => {
     
     const onClickHandle = (option) => {
         
-        if(option === correctOption) {
+        if(states.isAttempted) {
+            setStates((prevState) => ({
+                ...prevState,
+                firstMessage: false,
+            }))
+        }
+        else if(option === correctOption) {
             setStates((prevState) => ({
                 ...prevState,
                 showMessage: true,
+                firstMessage: true,
                 answeredCorrect: true,
                 chosenOption: option,
+                isAttempted: true,
             }))
         }
         else {
             setStates((prevState) => ({
                 ...prevState,
                 showMessage: true,
+                firstMessage: true,
                 answeredCorrect: false,
                 chosenOption: option,
+                isAttempted: true,
             }))
         }
 
@@ -75,6 +87,7 @@ const Quiz = () => {
             answeredCorrect: false,
             chosenOption: '',
             newGame: true,
+            isAttempted: false,
         }))
     }
 
@@ -92,6 +105,7 @@ const Quiz = () => {
                     o2: prevState.qArray[prevState.qNo+1][1][randomIndices[1]],
                     o3: prevState.qArray[prevState.qNo+1][1][randomIndices[2]],
                     o4: prevState.qArray[prevState.qNo+1][1][randomIndices[3]],
+                    isAttempted: false,
                 }));
             }
             else {
@@ -106,6 +120,7 @@ const Quiz = () => {
                     o2: prevState.qArray[prevState.qNo+1][1][randomIndices[1]],
                     o3: prevState.qArray[prevState.qNo+1][1][randomIndices[2]],
                     o4: prevState.qArray[prevState.qNo+1][1][randomIndices[3]],
+                    isAttempted: false,
                 }));
             }
         }
@@ -116,6 +131,7 @@ const Quiz = () => {
                     qNo: prevState.qNo,
                     correctAns: prevState.correctAns + 1,
                     quizComplete: true,
+                    isAttempted: false,
                 }));
             }
             else {
@@ -124,6 +140,7 @@ const Quiz = () => {
                     qNo: prevState.qNo,
                     correctAns: prevState.correctAns,
                     quizComplete: true,
+                    isAttempted: false,
                 }));
             }
         }
@@ -147,14 +164,19 @@ const Quiz = () => {
                             <button className='option' onClick={() => onClickHandle(states.o3)}>{states.o3}</button>
                             <button className='option' onClick={() => onClickHandle(states.o4)}>{states.o4}</button>
                         </div>
-                        {states.showMessage ? (
+                        {states.showMessage ? 
+                        (states.firstMessage ? (
                             <div className='c2-correct-p-div'>
                                 <p className='c2-correct-ans-p'>{ states.answeredCorrect ? 'Correct' : 'Wrong! Correct answer is '+correctOption }</p>
                             </div>
                         ) : (
-                            <div>
-                                <p className='c2-correct-ans-p-none'>{ states.answeredCorrect ? 'Correct' : 'Wrong! Correct answer is '+correctOption }</p>
+                            <div className='c2-second_attempt-p-div'>
+                                <p className='c2-correct-ans-p-none'>Already attempted, please move on to next question.</p>
                             </div>
+                        )) : (
+                            <div className='c2-space-fill'>
+                                <p className='c2-space-fill-p'>space fill</p>
+                            </div>    
                         )}
                         <div>
                             <button className='c2-next-button' onClick={handleNextButtonClick}>Next Question</button>
