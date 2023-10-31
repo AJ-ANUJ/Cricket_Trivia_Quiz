@@ -7,6 +7,7 @@ import selectQuestions from './SelectQuestions';
 const Quiz = () => {
     const location = useLocation();
 
+    const randomIndices = generateNum(0, 3, 4);
     const [states, setStates] = useState({
         qNo:0,
         correctAns:0,
@@ -15,54 +16,51 @@ const Quiz = () => {
         questions: location.state?.questions,
         showMessage: false,
         answeredCorrect: false,
+        chosenOption: '',
+        o1: location.state?.qa[0][1][randomIndices[0]],
+        o2: location.state?.qa[0][1][randomIndices[1]],
+        o3: location.state?.qa[0][1][randomIndices[2]],
+        o4: location.state?.qa[0][1][randomIndices[3]],
+        newGame: false,
     });
 
+    if(states.newGame === true) {
+        states.o1 = states.qArray[0][1][randomIndices[0]];
+        states.o2 = states.qArray[0][1][randomIndices[1]];
+        states.o3 = states.qArray[0][1][randomIndices[2]];
+        states.o4 = states.qArray[0][1][randomIndices[3]];
+        states.newGame = false;
+    }
+    
     const q = states.qArray[states.qNo][0];
-    const randomIndices = generateNum(0, 3, 4);
-    const o1 = states.qArray[states.qNo][1][randomIndices[0]];
-    const o2 = states.qArray[states.qNo][1][randomIndices[1]];
-    const o3 = states.qArray[states.qNo][1][randomIndices[2]];
-    const o4 = states.qArray[states.qNo][1][randomIndices[3]];
     const correctOption = states.qArray[states.qNo][1][0];
     
     const onClickHandle = (option) => {
         
-        if(states.qNo < 9) {
-            if(option === correctOption) {
-                setStates((prevState) => ({
-                    ...prevState,
-                    qNo: prevState.qNo + 1,
-                    correctAns: prevState.correctAns + 1,
-                    quizComplete: prevState.quizComplete,
-                }));
-            }
-            else {
-                setStates((prevState) => ({
-                    ...prevState,
-                    qNo: prevState.qNo + 1,
-                    correctAns: prevState.correctAns,
-                    quizComplete: prevState.quizComplete,
-                }));
-            }
+        if(option === correctOption) {
+            setStates((prevState) => ({
+                ...prevState,
+                showMessage: true,
+                answeredCorrect: true,
+                chosenOption: option,
+            }))
         }
-        else{
-            if(option === correctOption) {
-                setStates((prevState) => ({
-                    ...prevState,
-                    qNo: prevState.qNo,
-                    correctAns: prevState.correctAns + 1,
-                    quizComplete: true,
-                }));
-            }
-            else {
-                setStates((prevState) => ({
-                    ...prevState,
-                    qNo: prevState.qNo,
-                    correctAns: prevState.correctAns,
-                    quizComplete: true,
-                }));
-            }
+        else {
+            setStates((prevState) => ({
+                ...prevState,
+                showMessage: true,
+                answeredCorrect: false,
+                chosenOption: option,
+            }))
         }
+
+        // setTimeout(() => {
+        //     setStates((prevState) => ({
+        //         ...prevState,
+        //         showMessage: false,
+        //         answeredCorrect: false,
+        //     }))
+        // }, 2000)
         
     }
 
@@ -75,7 +73,60 @@ const Quiz = () => {
             qArray: selectQuestions(states.questions),
             showMessage: false,
             answeredCorrect: false,
+            chosenOption: '',
+            newGame: true,
         }))
+    }
+
+    const handleNextButtonClick = () => {
+        if(states.qNo < 9) {
+            if(states.chosenOption === correctOption) {
+                setStates((prevState) => ({
+                    ...prevState,
+                    qNo: prevState.qNo + 1,
+                    correctAns: prevState.correctAns + 1,
+                    quizComplete: prevState.quizComplete,
+                    showMessage: false,
+                    answeredCorrect: false,
+                    o1: prevState.qArray[prevState.qNo+1][1][randomIndices[0]],
+                    o2: prevState.qArray[prevState.qNo+1][1][randomIndices[1]],
+                    o3: prevState.qArray[prevState.qNo+1][1][randomIndices[2]],
+                    o4: prevState.qArray[prevState.qNo+1][1][randomIndices[3]],
+                }));
+            }
+            else {
+                setStates((prevState) => ({
+                    ...prevState,
+                    qNo: prevState.qNo + 1,
+                    correctAns: prevState.correctAns,
+                    quizComplete: prevState.quizComplete,
+                    showMessage: false,
+                    answeredCorrect: false,
+                    o1: prevState.qArray[prevState.qNo+1][1][randomIndices[0]],
+                    o2: prevState.qArray[prevState.qNo+1][1][randomIndices[1]],
+                    o3: prevState.qArray[prevState.qNo+1][1][randomIndices[2]],
+                    o4: prevState.qArray[prevState.qNo+1][1][randomIndices[3]],
+                }));
+            }
+        }
+        else{
+            if(states.chosenOption === correctOption) {
+                setStates((prevState) => ({
+                    ...prevState,
+                    qNo: prevState.qNo,
+                    correctAns: prevState.correctAns + 1,
+                    quizComplete: true,
+                }));
+            }
+            else {
+                setStates((prevState) => ({
+                    ...prevState,
+                    qNo: prevState.qNo,
+                    correctAns: prevState.correctAns,
+                    quizComplete: true,
+                }));
+            }
+        }
     }
 
     return (
@@ -89,35 +140,30 @@ const Quiz = () => {
                     <div className='c2-q-div'>
                         <p className='question'>{q}</p>
                     </div>
-                    <div className='c2-button-and-message-div'>
+                    <div className='c2-option-nxtbutton-message-div'>
                         <div className='c2-button-div'>
-                            <button className='option' onClick={() => onClickHandle(o1)}>{o1}</button>
-                            <button className='option' onClick={() => onClickHandle(o2)}>{o2}</button>
-                            <button className='option' onClick={() => onClickHandle(o3)}>{o3}</button>
-                            <button className='option' onClick={() => onClickHandle(o4)}>{o4}</button>
-                            {/* <div className='c2-button-cell'>
-                            <button className='option' onClick={() => onClickHandle(o1)}>{o1}</button>
-                            </div>
-                            <div className='c2-button-cell'>
-                            <button className='option' onClick={() => onClickHandle(o2)}>{o2}</button>
-                            </div>
-                            <div className='c2-button-cell'>
-                            <button className='option' onClick={() => onClickHandle(o3)}>{o3}</button>
-                            </div>
-                            <div className='c2-button-cell'>
-                            <button className='option' onClick={() => onClickHandle(o4)}>{o4}</button>
-                            </div> */}
+                            <button className='option' onClick={() => onClickHandle(states.o1)}>{states.o1}</button>
+                            <button className='option' onClick={() => onClickHandle(states.o2)}>{states.o2}</button>
+                            <button className='option' onClick={() => onClickHandle(states.o3)}>{states.o3}</button>
+                            <button className='option' onClick={() => onClickHandle(states.o4)}>{states.o4}</button>
                         </div>
-                        {states.showMessage && (
-                            <div>
+                        {states.showMessage ? (
+                            <div className='c2-correct-p-div'>
                                 <p className='c2-correct-ans-p'>{ states.answeredCorrect ? 'Correct' : 'Wrong! Correct answer is '+correctOption }</p>
                             </div>
+                        ) : (
+                            <div>
+                                <p className='c2-correct-ans-p-none'>{ states.answeredCorrect ? 'Correct' : 'Wrong! Correct answer is '+correctOption }</p>
+                            </div>
                         )}
+                        <div>
+                            <button className='c2-next-button' onClick={handleNextButtonClick}>Next Question</button>
+                        </div>
                     </div>
                 </div>
             ) : (
                 <div className='c2-message-div'>
-                <p className='c2-message'>You got {states.correctAns} out of 10!</p>
+                <p className='c2-message'>You got {states.correctAns} correct answers out of 10!</p>
                 <button className='play-again-button' onClick={handlePlayAgain}>Play Again ?</button>
                 </div>
             )}
