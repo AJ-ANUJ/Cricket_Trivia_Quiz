@@ -35,7 +35,7 @@ Muttiah Muralitharan, Shane Warne, Anil Kumble, James Anderson
 Who is the leading wicket-taker in ODIs?
 Muttiah Muralitharan, Shahid Afridi, Glenn McGrath, Lasith Malinga
 Who is the leading wicket-taker in T20Is?
-Wanindu Hasaranga, Rashid Khan, Lasith Malinga, Shakib Al Hasan
+Tim Southee, Rashid Khan, Lasith Malinga, Shakib Al Hasan
 Which country has won the most Cricket World Cups?
 Australia, West Indies, India, Pakistan
 Which country has won the most Ashes series?
@@ -141,6 +141,6 @@ Mumbai, Kolkata, Chennai, Delhi
 Who holds the record for the most sixes in international cricket?
 Rohit Sharma, Chris Gayle, Brendon McCullum, Yuvraj Singh
 Who is known as the "Black Bradman" for his extraordinary batting skills?
-Sir Vivian Richards, Brian Lara, Don Bradman, Sachin Tendulkar
+George Headley, Brian Lara, Don Bradman, Sachin Tendulkar
 Which cricketer is known as the "Turbanator" for his spin bowling?
 Harbhajan Singh, Anil Kumble, Ravi Ashwin, Daniel Vettori
