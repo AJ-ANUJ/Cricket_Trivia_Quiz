@@ -32,8 +32,6 @@ What is the highest score in a T20I?
 176, 162, 158, 145
 Who is the leading wicket-taker in Test cricket?
 Muttiah Muralitharan, Shane Warne, Anil Kumble, James Anderson
-Who is the leading wicket-taker in ODIs?
-Muttiah Muralitharan, Shahid Afridi, Glenn McGrath, Lasith Malinga
 Who is the leading wicket-taker in T20Is?
 Tim Southee, Rashid Khan, Lasith Malinga, Shakib Al Hasan
 Which country has won the most Cricket World Cups?
